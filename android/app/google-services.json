@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "438605770410",
+    "project_id": "chatshow-cbe4c",
+    "storage_bucket": "chatshow-cbe4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438605770410:android:02243ffeff8d2251556ad3",
+        "android_client_info": {
+          "package_name": "com.example.chatshow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-muyS8aLvPvQtgGpWyrHKUDGHMArNkww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
