@@ -58,12 +58,14 @@ class LoginPage extends StatelessWidget {
             MyTextfield(
               hintText: 'Email',
               controller: _emailController,
+              keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 10),
             MyTextfield(
               hintText: 'Password',
               obscureText: true,
               controller: _passwordController,
+              keyboardType: TextInputType.visiblePassword,
             ),
             const SizedBox(height: 25),
             MyButton(

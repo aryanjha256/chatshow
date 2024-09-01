@@ -69,18 +69,21 @@ class RegisterPage extends StatelessWidget {
             MyTextfield(
               hintText: 'Email',
               controller: _emailController,
+              keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 10),
             MyTextfield(
               hintText: 'Password',
               obscureText: true,
               controller: _passwordController,
+              keyboardType: TextInputType.visiblePassword,
             ),
             const SizedBox(height: 10),
             MyTextfield(
               hintText: 'Confirm Password',
               obscureText: true,
               controller: _confirmPasswordController,
+              keyboardType: TextInputType.visiblePassword,
             ),
             const SizedBox(height: 25),
             MyButton(

@@ -6,10 +6,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
-  final String receiverEmail;
+  final String receiverDisplayName;
   final String receiverId;
   const ChatPage(
-      {super.key, required this.receiverEmail, required this.receiverId});
+      {super.key, required this.receiverDisplayName, required this.receiverId});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -76,7 +76,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.receiverEmail),
+        title: Text(widget.receiverDisplayName),
         centerTitle: true,
       ),
       body: Column(

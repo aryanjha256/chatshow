@@ -40,6 +40,7 @@ class AuthService {
       await _firestore.collection('Users').doc(userCredential.user!.uid).set({
         'uid': userCredential.user!.uid,
         'email': email,
+        'displayName': email.split('@')[0],
       });
 
       return userCredential;
@@ -50,5 +51,18 @@ class AuthService {
 
   Future<void> signOut() async {
     await _auth.signOut();
+  }
+
+  Future<void> updateDisplayName(String displayName) async {
+    await _auth.currentUser!.updateDisplayName(displayName);
+    await _firestore.collection('Users').doc(_auth.currentUser!.uid).update({
+      'displayName': displayName,
+    });
+  }
+
+  Future<String> getDisplayName() async {
+    final DocumentSnapshot doc =
+        await _firestore.collection('Users').doc(_auth.currentUser!.uid).get();
+    return doc['displayName'];
   }
 }

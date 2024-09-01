@@ -5,12 +5,16 @@ class MyTextfield extends StatelessWidget {
   final bool obscureText;
   final TextEditingController controller;
   final FocusNode? focusNode;
+  final TextInputType? keyboardType;
+  final bool? readOnly;
   const MyTextfield({
     super.key,
     required this.hintText,
     this.obscureText = false,
     required this.controller,
     this.focusNode,
+    this.keyboardType,
+    this.readOnly,
   });
 
   @override
@@ -20,6 +24,8 @@ class MyTextfield extends StatelessWidget {
         horizontal: 25.0,
       ),
       child: TextField(
+        keyboardType: keyboardType,
+        readOnly: readOnly ?? false,
         obscureText: obscureText,
         controller: controller,
         focusNode: focusNode,

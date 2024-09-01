@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class UserTile extends StatelessWidget {
-  final String text;
+  final String displayName;
+  final String email;
+
   final void Function()? onTap;
 
-  const UserTile({super.key, required this.text, this.onTap});
+  const UserTile(
+      {super.key, required this.displayName, required this.email, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +23,19 @@ class UserTile extends StatelessWidget {
         child: Row(
           children: [
             CircleAvatar(
-              backgroundColor: Theme.of(context).colorScheme.primary,
+              backgroundColor: Colors.transparent,
               child: Text(
-                text[0].toUpperCase(),
+                email[0].toUpperCase(),
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color:
+                      Colors.primaries[email.length % Colors.primaries.length],
                   fontSize: 20,
                 ),
               ),
             ),
             const SizedBox(width: 10),
             Text(
-              text,
+              displayName,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
                 fontSize: 20,
